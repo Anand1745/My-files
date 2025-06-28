@@ -132,18 +132,3 @@ vect = CountVectorizer(ngram_range=(1,2)).fit(text_df['text'])
 feature_names +vect.get_feature_names_out()
 print("Number of features: {}\n".format(len(feature_names)))
 print("First 20 features:\n {}".format(feature_names[:20]))
-
-X = text_df['text']
-Y = text_df['sentiment']
-X = vect.transform(X)
-
-x_train, x_text, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
-
-print("Size of x_train:", (x_train.shape))
-print("Size of y_train:", (y_train.shape))
-print("Size of x_test:", (x_test.shape))
-print("Size of y_test:", (y_test.shape))
-
-import warnings
-warnings.filtewarnings('ignore')
-
